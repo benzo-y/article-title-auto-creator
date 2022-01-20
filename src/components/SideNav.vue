@@ -7,14 +7,9 @@
     </v-list-item>
     <v-divider></v-divider>
     <v-list nav dense>
-      <v-list-item :key="1" :to="{ name: 'Home'}" exact>
+      <v-list-item  v-for="(item, index) in items" :key="index" :to="item.link" exact>
         <v-list-item-content>
-          <v-list-item-title>ホーム</v-list-item-title>
-        </v-list-item-content>
-      </v-list-item>
-      <v-list-item :key="2" :to="{ name: 'TitleCreater'}" exact>
-        <v-list-item-content>
-          <v-list-item-title>タイトル生成</v-list-item-title>
+          <v-list-item-title>{{item.title}}</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
     </v-list>
@@ -22,7 +17,12 @@
 </template>
 <script>
 export default{
-  data: () => ({}),
+  data: () => ({
+    items: [
+      {title: 'ホーム', link: {name: 'Home'}},
+      {title: 'タイトル生成', link: {name: 'TitleCreater'}}
+    ]
+  }),
 }
 </script>
 
