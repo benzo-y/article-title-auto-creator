@@ -18,7 +18,7 @@
         </v-btn>            
       </router-link>
     </v-app-bar>
-    <v-navigation-drawer v-model="drawer" absolute temporary>
+    <v-navigation-drawer v-model="$store.state.drawer" absolute temporary>
       <v-list-item>
         <v-list-item-content>
           タイトル生成サイト
@@ -45,17 +45,13 @@
 </template>
 
 <script>
-
+import { mapActions } from "vuex";
 export default {
   name: 'App',
 
-  data: () => ({
-    drawer: false
-  }),
+  data: () => ({}),
   methods: {
-    toggleSideMenu() {
-      this.drawer = !this.drawer;
-    }
+    ...mapActions(["toggleSideMenu"])
   }
 };
 </script>
