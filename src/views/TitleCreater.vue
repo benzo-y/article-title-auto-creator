@@ -41,6 +41,8 @@
 </template>
 
 <script>
+// タイトル作成用ひな形の読み込み
+import TitleTemplateList from "../consts/TitleTemplateList";
 export default{
   data: () => ({
     keyword: "",
@@ -54,20 +56,11 @@ export default{
     createTitles() {
       var result = this.$refs.form.validate();
       if (result) {
-        var title_tmplate = []
-
-        // TODO: タイトル作成用ひな形の読み込み
-        title_tmplate = [
-          ["【必見】", "完全解説！おすすめ10選を紹介"],
-          ["【おすすめ】", "完全解説！おすすめ20選を紹介"],
-          ["【一押し】", "完全解説！おすすめ30選を紹介"],
-          ["【重要】", "完全解説！おすすめ40選を紹介"],
-          ["【要チェック】", "完全解説！おすすめ50選を紹介"],
-          ["【閲覧注意】", "完全解説！おすすめ60選を紹介"],
-        ];
+        // 配列のコピー
+        var title_tmplate = [...TitleTemplateList];
 
         this.titles = [];
-        [...Array(3)].map(() => {
+        [...Array(10)].map(() => {
           var randm_num = Math.floor( Math.random() * title_tmplate.length);
           this.titles.push(title_tmplate[randm_num][0] + this.keyword + title_tmplate[randm_num][1]);          
           title_tmplate.splice(randm_num, 1);
