@@ -21,11 +21,11 @@
           </v-card-text>
         </v-card>
       </v-flex>
+      <v-flex lg12 xs12 mt-5 mb-5 class="text-center">
+        <h2>タイトルを付けるうえでのポイント</h2>
+      </v-flex>
       <v-flex lg10 xs10 mb-5>
-        <v-layout row wrap justify-comtens-start>
-          <v-flex lg12 xs12 mt-5 mb-5 class="text-center">
-            <h2>タイトルを付けるうえでのポイント</h2>
-          </v-flex>
+        <v-layout row wrap justify-comtens-start mt-0>
           <v-flex lg6 xs12 mb-5 v-for="(hint, index) in hints" :key="index">
             <v-card class="mr-5 ml-5">
               <v-card-title>
