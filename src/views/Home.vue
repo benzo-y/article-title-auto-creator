@@ -26,33 +26,13 @@
           <v-flex lg12 xs12 mt-5 mb-5 class="text-center">
             <h2>タイトルを付けるうえでのポイント</h2>
           </v-flex>
-          <v-flex lg6 xs12 mb-5>
+          <v-flex lg6 xs12 mb-5 v-for="(hint, index) in hints" :key="index">
             <v-card class="mr-5 ml-5">
               <v-card-title>
-                タイトル作成ツールについて
+                {{hint.title}}
               </v-card-title>
               <v-card-text>
-                vueの学習目的で作成したwebページです。<br>ブログ運営でタイトルの付け方を勉強したので、タイトル自動生成ツールを作成しました。
-              </v-card-text>
-            </v-card>
-          </v-flex>
-          <v-flex lg6 xs12 mb-5>
-            <v-card class="mr-5 ml-5">
-              <v-card-title>
-                タイトル作成ツールについて
-              </v-card-title>
-              <v-card-text>
-                vueの学習目的で作成したwebページです。<br>ブログ運営でタイトルの付け方を勉強したので、タイトル自動生成ツールを作成しました。
-              </v-card-text>
-            </v-card>
-          </v-flex>
-          <v-flex lg6 xs12 mb-5>
-            <v-card class="mr-5 ml-5">
-              <v-card-title>
-                タイトル作成ツールについて
-              </v-card-title>
-              <v-card-text>
-                vueの学習目的で作成したwebページです。<br>ブログ運営でタイトルの付け方を勉強したので、タイトル自動生成ツールを作成しました。
+                {{hint.text}}
               </v-card-text>
             </v-card>
           </v-flex>
@@ -63,7 +43,11 @@
 </template>
 
 <script>
+  import TitleHintList from "../consts/TitleHintList"
   export default {
     name: 'Home',
+    data: () =>({
+      hints: TitleHintList,
+    })
   }
 </script>
