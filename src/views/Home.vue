@@ -22,14 +22,14 @@
         </v-card>
       </v-flex>
       <v-flex lg12 xs12 mt-5 mb-5 class="text-center">
-        <h2>タイトルを付けるうえでのポイント</h2>
+        <h2>タイトルを付けるうえでの{{hints.length}}ポイント</h2>
       </v-flex>
       <v-flex lg10 xs10 mb-5>
         <v-layout row wrap justify-comtens-start mt-0>
           <v-flex lg6 xs12 mb-5 v-for="(hint, index) in hints" :key="index">
-            <v-card class="mr-5 ml-5">
+            <v-card class="mr-5 ml-5 hint-card">
               <v-card-title>
-                {{hint.title}}
+                {{index+1}}. {{hint.title}}
               </v-card-title>
               <v-card-text>
                 {{hint.text}}
@@ -51,3 +51,12 @@
     })
   }
 </script>
+
+<style scoped>
+.hint-card {
+  height: 100%;
+}
+.hint-card .v-card__text {
+    white-space: pre-line;
+}
+</style>
