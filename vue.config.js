@@ -11,5 +11,5 @@ module.exports = {
 
   outputDir: 'docs',
   assetsDir: './',
-  publicPath: './'
+  publicPath: '/article-title-auto-creator/'
 }
